@@ -70,7 +70,7 @@ class QuarterlyIncomeAnalyzer:
             'Top Earning Channel\'s Quarterly Income': f"${top_channel['Average Income'] / 1_000_000:.1f}M"
         }
         insights = [
-            f"The top channel is {metrics['Top Earning Channel']} with an average income of {metrics['Top Earning Channel\'s Quarterly Income']} per quarter.",
+            f"""The top channel is {metrics['Top Earning Channel']} with an average income of {metrics["Top Earning Channel's Quarterly Income"]} per quarter."""
             "The highlighted bar represents the channel with the highest average income.",
             "The chart uses clear annotations to make data interpretation easier."
         ]
