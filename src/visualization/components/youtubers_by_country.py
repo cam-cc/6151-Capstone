@@ -17,18 +17,19 @@ class YoutubersByCountryDist:
         # YouTubers by country
         country_counts = self.df['Country'].value_counts().reset_index()
         country_counts.columns = ['Country', 'Count']
-        
-        # bar chart
+
         fig = px.bar(
             country_counts,
             x='Country',
             y='Count',
-            title= 'Global Distribution of Top YouTubers',   
+            title='Global Distribution of Top YouTubers',
             labels={'Count': 'Number of YouTubers'},
             template='plotly_white',
-            width=1200,
-            height=800
+            text='Count'  # Adds values as text on the bars
         )
+
+        # Adjust the position of the text
+        fig.update_traces(textposition='outside')  # Places the text above the bars
 
         fig.update_layout(
             title={
