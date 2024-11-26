@@ -30,9 +30,11 @@ class YearlyViewAnalyzer:
             fig.add_trace(go.Scatter(
                 x=channel_data['Year'],
                 y=channel_data['Views'],
-                mode='lines+markers',
+                mode='lines+markers+text',  # Adds text to the plot
                 name=channel,
                 line=dict(width=2),
+                text=channel_data['Views'].round(1),  # Display rounded views
+                textposition='top center'  # Position the text above the markers
             ))
 
         fig.update_layout(
