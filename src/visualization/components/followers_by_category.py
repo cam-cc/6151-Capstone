@@ -20,7 +20,7 @@ class FollowersByCategoryAnalyzer:
         
         # Convert followers to billions for better readability
         df_chart['Followers'] = df_chart['Followers'] / 1_000_000_000
-        
+
         # Create Plotly bar chart
         fig = px.bar(
             df_chart,
@@ -29,10 +29,14 @@ class FollowersByCategoryAnalyzer:
             title='Followers by Category',
             labels={'Category': 'Category', 'Followers': 'Followers (billion)'},
             template='plotly_white',
+            text=df_chart['Followers'].apply(lambda x: f"{x:.2f} bi"),  # Format as '2.5 bi'
             width=1200,
             height=800
         )
-        
+
+        # Adjust the position of the text
+        fig.update_traces(textposition='outside')  # Places the text above the bars
+
         # Adjust layout with expanded y-axis range
         max_followers = df_chart['Followers'].max()
         y_margin = max_followers * 0.2  # Add 20% margin
