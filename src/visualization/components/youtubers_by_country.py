@@ -52,7 +52,7 @@ class YoutubersByCountryDist:
         
         # insights
         insights = [
-            f"The highest population of \"Top 100\" YouTubers are from {metrics['Top Country']} ({metrics['Most "Top 100" Channels in a Country']} channels)",
+            f"""The highest population of "Top 100" YouTubers are from {metrics['Top Country']} ({metrics['Most "Top 100" Channels in a Country']} channels)"""
             f"The \"Top 100\" creators are spread across {metrics['Total Countries in the Top 100']} countries"
         ]
         
